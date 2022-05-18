@@ -26,3 +26,5 @@ pub trait Write {
 pub trait Read {
     fn read<'m>(&'m mut self, buf: &'m mut [u8]) -> Result<usize, TlsError>;
 }
+
+impl<T: embedded_io::blocking::Read> Read for T {}

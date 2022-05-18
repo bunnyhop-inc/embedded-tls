@@ -9,8 +9,12 @@ authors = [
 
 [dependencies]
 embedded-tls = { path = "../..", features = ["log", "tokio"] }
+embedded-io = { version = "0.2.0", features = ["tokio"] }
 env_logger = "0.8"
 tokio = { version = "1.7", features = ["full"] }
 rand = "0.8"
 log = "0.4"
 pem-parser = "0.1.1"
+
+[patch.crates-io]
+embedded-io = { path = "../../../../embedded-io" }
